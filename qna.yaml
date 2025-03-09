@@ -1,0 +1,97 @@
+version: 3
+domain: security_vulnerability
+created_by: Dasharath Masirkar
+seed_examples:
+  - context: |
+     The httpd in Red Hat Enterprise Linux 9 (RHEL) stands for HyperText Transfer Daemon, commonly known as Apache HTTP Server. Apache HTTP Server is an open-source web server software.The Red Hat Enterprise Linux 9 provides httpd-2.4.62 version of the Apache HTTP Server.
+    questions_and_answers:
+      - question: |
+          When is httpd package in RHEL 9?
+        answer: |
+          The httpd in Red Hat Enterprise Linux 9 (RHEL) stands for HyperText Transfer Daemon, commonly known as Apache HTTP Server.
+      - question: |
+          What version of httpd is provided in RHEL 9?
+        answer: |
+          The httpd-2.4.62 is the version provided in RHEL 9.
+      - question: |
+          Which package provide Apache httpd version in RHEL 9?
+        answer: |
+          The httpd package.
+  - context: |
+     CVE-2024-38473 is a flaw was found in the mod_proxy module of httpd. Due to an encoding problem, specially crafted request URLs with incorrect encoding can be sent to backend services, potentially bypassing authentication.
+     This issue affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied.The CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. If the system is not already updated to latest version of httpd then use following command to update httpd package to the latest version: # dnf update httpd For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2024:4726.
+    questions_and_answers:
+      - question: |
+          Does CVE-2024-38473 affect RHEL9?
+        answer: |
+          CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+      - question: Does httpd-2.4.57 in RHEL9 is affectecd by vulnerability?
+        answer: |
+          Yes, httpd-2.4.57 is affected by CVE-2024-38473, The CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+      - question: |
+          How to fix security vulnerability CVE-2024-38473 in RHEL 9?
+        answer: |
+          CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+  - context: |-
+      Production Years: 1981–1983
+            Body Style: 2-door coupe
+            Engine: 2.85 L V6 PRV engine
+            Transmission 5-speed manual or 3-speed automatic
+            Horsepower 130 hp
+            153 lb-ft
+            Approximately 8.8 seconds
+            110 mph
+            2,712 lb (1,230 kg)
+            Flux capacitor fitted for time travel and costs $10,000,000
+    questions_and_answers:
+      - question: What was the production years of the DeLorean DMC-12?
+        answer: The car was in production from 1981 to 1983.
+      - question: How much horsepower does the DeLorean have?
+        answer: It has 130 horsepower.
+      - question: What is the flux capacitor used for in a Delorean DMC-12?
+        answer: >-
+          The flux capacitor is used for time travel capabilities and costs
+          $10,000,000
+  - context: |-
+      Here is a maintenance schedule.
+            Regular Oil Changes should be done every 3,000 miles or 3 months.
+            Brake Fluid should be changed every 2 years.
+            Transmission Fluid should be changed every 30,000 miles.
+            Coolant should be changed every 2 years
+            You should regularly check the battery for corrosion and proper connection.
+            You should add new fluid to the flux capacitor on a regular basis.
+    questions_and_answers:
+      - question: How often should you change the oil on a DeLorean DMC-12?
+        answer: >-
+          You should change the oil ever 3,000 miles or every 3 months.
+          Whichever comes first.
+      - question: How often should changed the blake fluid on a DeLorean DMC-12?
+        answer: You should change the blake fluid every two years.
+      - question: >-
+          What should you check on a Delorean DMC-12 as part of a regular
+          maintenance schedule?
+        answer: >-
+          You should consider regular oil changes, blake fluid replacement,
+          transmission fluid, battery, flux capacitor and collant.
+  - context: |-
+      Here are some fun facts about the DeLorean DMC-12:
+            The DeLorean DMC-12 was originally intended to have a mid-engine layout, but this was later changed
+            to a rear-engine layout due to design and cost constraints.
+            The DeLorean time machine special edition can time travel by accelerating to 88 miles per hour.
+            The flux capacitor, which enables time travel, costs $10,000,000 dollars.
+    questions_and_answers:
+      - question: How much does it cost to repair a flux capacitor on a Delorean DMC-12?
+        answer: ' It costs $10,000,000 to repair or replace a flux capacitor.'
+      - question: >-
+          How fast do you need to be going to enable time travel on a DeLorean
+          DMC-12?
+        answer: 88 miles per hour.
+      - question: ' What type of layout does a Delorean DMC-12 have?'
+        answer: It has a rear-engine layout.
+document_outline: |
+  vulnerability and CVE related information about httpd package in Red Hat Enterprise Linux 9.
+document:
+  repo: https://github.com/dmasirkar/rhel-ai-demo-for-rh-week
+  commit: a867bd6eb6ec70cae39bb2e922a9f9486a37857b
+  patterns:
+    - httpd.cve.md
