@@ -181,7 +181,7 @@ seed_examples:
 document_outline: |
   vulnerability and CVE related information about httpd package in Red Hat Enterprise Linux 9.
 document:
-  repo: https://gitlab.cee.redhat.com/rhel-ai-india/rhel-ai-demo-for-rh-week
-  commit: a867bd6eb6ec70cae39bb2e922a9f9486a37857b
+  repo: https://github.com/dmasirkar/rhel-ai-demo-for-rh-week
+  commit: 8c4fba0b24ab554ac6cfae7480d91574a16004c0
   patterns:
     - rhelai.md
