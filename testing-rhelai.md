@@ -3,7 +3,7 @@
 ## Vulnerability and CVE related information about httpd
 
 ### The httpd in Red Hat Enterprise Linux 9 (RHEL) stands for HyperText Transfer Daemon, commonly known as Apache HTTP Server. Apache HTTP Server is an open-source web server software that powers many of the world's websites.The Red Hat Enterprise Linux 9 provides httpd-2.4.62 version of the Apache HTTP Server.
-
+https://raw.githubusercontent.com/dmasirkar/rhel-ai-demo-for-rh-week/refs/heads/main/testing-rhelai.md
 ### 1) CVE-2024-38473 :
 
 #### Description :
@@ -52,8 +52,6 @@ A flaw was found in the mod_rewrite module of httpd. Improper escaping of output
 This issue affects configurations with substitution rules used in the RewriteRule directive using backreferences or variables as the first segment of the substitution.Additionally, this flaw requires mod_rewrite to be loaded and used. This module can be disabled if its functionality is not needed.
 
 ##### Solution :
-
-[How to disable specific crypto algorithms when using system-wide cryptographic policies]
 
 CVE-2024-38475 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and Red Hat Enterprise Linux (RHEL) 9.5. 
 If the system is not already updated to latest version of httpd then use following command to update httpd package to the latest version:
@@ -217,50 +215,6 @@ The vulnerability is most commonly associated with the "acl_xattr" module and ca
 
 For more details refer to https://access.redhat.com/security/cve/cve-2023-4091
 
-
-### 3) `CVE-2023-3961`
-WARNING 2025-03-11 12:03:26,640 root:177: Provided markdown file /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md contains HTML contents, which is currently unsupported as a part of markdownNOTE: Continuing this might affect your data generation quality.To get best results please format your markdown documents without the use of HTML or use a different document filetype.
-INFO 2025-03-11 12:03:26,640 instructlab.sdg.utils.taxonomy:184: Appended Markdown content from /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md
-INFO 2025-03-11 12:03:28,499 instructlab.sdg.utils.chunkers:120: Docling models not found on disk, downloading models...
-WARNING 2025-03-11 12:03:30,622 easyocr.easyocr:71: Using CPU. Note: This module is much faster with a GPU.
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
-Merges were not in checkpoint, building merges on the fly.
-100%|##########| 32000/32000 [00:25<00:00, 1278.00it/s]
-INFO 2025-03-11 12:03:59,746 instructlab.sdg.utils.chunkers:271: Successfully loaded tokenizer from: /home/dmasirka/.cache/instructlab/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
-INFO 2025-03-11 12:03:59,748 docling.document_converter:219: Going to convert document batch...
-INFO 2025-03-11 12:03:59,748 docling.pipeline.base_pipeline:37: Processing document rhelai.md
-INFO 2025-03-11 12:04:01,181 docling.document_converter:234: Finished converting document rhelai.md in 1.43 sec.
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:534: Processed 1 docs, of which 0 failed
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:184: Processing parsed docling json file: /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/docling-artifacts/rhelai.json
-failed to generate data with exception: list index out of range
-
-#### Description
-
-A path traversal vulnerability was identified in Samba when processing client pipe names connecting to Unix domain sockets within a private directory. Samba typically uses this mechanism to connect SMB clients to remote procedure call (RPC) services like SAMR LSA or SPOOLSS, which Samba initiates on demand. However, due to inadequate sanitization of incoming client pipe names, allowing a client to send a pipe name containing Unix directory traversal characters (../). This could result in SMB clients connecting as root to Unix domain sockets outside the private directory. If an attacker or client managed to send a pipe name resolving to an external service using an existing Unix domain socket, it could potentially lead to unauthorized access to the service and consequential adverse events, including compromise or service crashes.
-
-#### Solution
-WARNING 2025-03-11 12:03:26,640 root:177: Provided markdown file /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md contains HTML contents, which is currently unsupported as a part of markdownNOTE: Continuing this might affect your data generation quality.To get best results please format your markdown documents without the use of HTML or use a different document filetype.
-INFO 2025-03-11 12:03:26,640 instructlab.sdg.utils.taxonomy:184: Appended Markdown content from /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md
-INFO 2025-03-11 12:03:28,499 instructlab.sdg.utils.chunkers:120: Docling models not found on disk, downloading models...
-WARNING 2025-03-11 12:03:30,622 easyocr.easyocr:71: Using CPU. Note: This module is much faster with a GPU.
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
-Merges were not in checkpoint, building merges on the fly.
-100%|##########| 32000/32000 [00:25<00:00, 1278.00it/s]
-INFO 2025-03-11 12:03:59,746 instructlab.sdg.utils.chunkers:271: Successfully loaded tokenizer from: /home/dmasirka/.cache/instructlab/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
-INFO 2025-03-11 12:03:59,748 docling.document_converter:219: Going to convert document batch...
-INFO 2025-03-11 12:03:59,748 docling.pipeline.base_pipeline:37: Processing document rhelai.md
-INFO 2025-03-11 12:04:01,181 docling.document_converter:234: Finished converting document rhelai.md in 1.43 sec.
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:534: Processed 1 docs, of which 0 failed
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:184: Processing parsed docling json file: /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/docling-artifacts/rhelai.json
-failed to generate data with exception: list index out of range
-
-Mitigation for this issue is either not available or the currently available options don't meet the Red Hat Product Security criteria comprising ease of use and deployment, applicability to widespread installation base or stability.
-Additional information
-Bugzilla 2241881: samba: smbd allows client access to unix domain sockets on the file system as root
-CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
-FAQ: Frequently asked questions about CVE-2023-3961
-
-
 ### 4) `CVE-2023-4154`
 
 #### Description
@@ -320,27 +274,6 @@ Lets dive deep into each of the vulnerabilities for more details.
 
 ### Description
 A flaw was found in the SSH channel integrity. By manipulating sequence numbers during the handshake, an attacker can remove the initial messages on the secure channel without causing a MAC failure. For example, an attacker could disable the ping extension and thus disable the new countermeasure in OpenSSH 9.5 against keystroke timing attacks.
-
-### Statement
-This CVE is classified as moderate because the attack requires an active Man-in-the-Middle (MITM) who can intercept and modify the connection's traffic at the TCP/IP layer.
-
-Although the attack is cryptographically innovative, its WARNING 2025-03-11 12:03:26,640 root:177: Provided markdown file /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md contains HTML contents, which is currently unsupported as a part of markdownNOTE: Continuing this might affect your data generation quality.To get best results please format your markdown documents without the use of HTML or use a different document filetype.
-INFO 2025-03-11 12:03:26,640 instructlab.sdg.utils.taxonomy:184: Appended Markdown content from /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/knowledge_rhelai_76xhx3nq/rhelai.md
-INFO 2025-03-11 12:03:28,499 instructlab.sdg.utils.chunkers:120: Docling models not found on disk, downloading models...
-WARNING 2025-03-11 12:03:30,622 easyocr.easyocr:71: Using CPU. Note: This module is much faster with a GPU.
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
-Merges were not in checkpoint, building merges on the fly.
-100%|##########| 32000/32000 [00:25<00:00, 1278.00it/s]
-INFO 2025-03-11 12:03:59,746 instructlab.sdg.utils.chunkers:271: Successfully loaded tokenizer from: /home/dmasirka/.cache/instructlab/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
-INFO 2025-03-11 12:03:59,748 docling.document_converter:219: Going to convert document batch...
-INFO 2025-03-11 12:03:59,748 docling.pipeline.base_pipeline:37: Processing document rhelai.md
-INFO 2025-03-11 12:04:01,181 docling.document_converter:234: Finished converting document rhelai.md in 1.43 sec.
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:534: Processed 1 docs, of which 0 failed
-INFO 2025-03-11 12:04:01,198 instructlab.sdg.utils.chunkers:184: Processing parsed docling json file: /home/dmasirka/.local/share/instructlab/datasets/2025-03-11_120320/preprocessed_2025-03-11T12_03_25/documents/docling-artifacts/rhelai.json
-failed to generate data with exception: list index out of range
-security impact is fortunately quite limited. It only allows the deletion of consecutive messages, and deleting most messages at this protocol stage prevents user authentication from proceeding, leading to a stalled connection.
-
-The most significant identified impact is that it enables a MITM to delete the SSH2_MSG_EXT_INFO message sent before authentication begins. This allows the attacker to disable a subset of keystroke timing obfuscation features. However, there is no other observable impact on session secrecy or session integrity.
 
 ### Mitigation
 Update to the last version and check that client and server provide kex pseudo-algorithms indicating usage of the updated version of the protocol which is protected from the attack. If "kex-strict-c-v00@openssh.com" is provided by clients and "kex-strict-s-v00@openssh.com" is in the server's reply, no other steps are necessary.
