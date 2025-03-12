@@ -1,0 +1,88 @@
+version: 3
+domain: httpd_vulnerability
+created_by: sbr-rhelai-india
+seed_examples:
+  - context: |
+     CVE-2024-38473 is a flaw was found in the mod_proxy module of httpd. Due to an encoding problem, specially crafted request URLs with incorrect encoding can be sent to backend services, potentially bypassing authentication.This issue affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied.The CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. If the system is not already updated to latest version of httpd then use following command to update httpd package to the latest version: # dnf update httpd For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2024:4726.
+    questions_and_answers:
+      - question: |
+          Does CVE-2024-38473 affect RHEL9?
+        answer: |
+          CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+      - question: Does httpd-2.4.57 in RHEL9 is affectecd by vulnerability?
+        answer: |
+          Yes, httpd-2.4.57 is affected by CVE-2024-38473, The CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+      - question: |
+          How to fix security vulnerability CVE-2024-38473 in RHEL 9?
+        answer: |
+          CVE-2024-38473 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later. To get the fix update to latest httpd version using dnf update httpd command.
+  - context: |
+     The httpd in Red Hat Enterprise Linux 9 (RHEL) stands for HyperText Transfer Daemon, commonly known as Apache HTTP Server. Apache HTTP Server is an open-source web server software.The Red Hat Enterprise Linux 9 provides httpd-2.4.62 version of the Apache HTTP Server.
+    questions_and_answers:
+      - question: |
+          When is httpd package in RHEL 9?
+        answer: |
+          The httpd in Red Hat Enterprise Linux 9 (RHEL) stands for HyperText Transfer Daemon, commonly known as Apache HTTP Server.
+      - question: |
+          What version of httpd is provided in RHEL 9?
+        answer: |
+          The httpd-2.4.62 is the version provided in RHEL 9.
+      - question: |
+          Which package provide Apache httpd version in RHEL 9?
+        answer: |
+          The httpd package.
+  - context: >-
+      CVE-2024-38475 is a flaw was found in the mod_rewrite module of httpd. Improper escaping of output allows an attacker to map URLs to filesystem locations permitted to be served by the server but are not intentionally or directly reachable by any URL. This issue results in code execution or source code disclosure.This issue affects configurations with substitution rules used in the RewriteRule directive using backreferences or variables as the first segment of the substitution.Additionally, this flaw requires mod_rewrite to be loaded and used. This module can be disabled if its functionality is not needed.The CVE-2024-38475 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and Red Hat Enterprise Linux (RHEL) 9.5.If the system is not already updated to latest version of httpd then use `# dnf update httpd` command to update httpd package to the latest version.For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2024:4726
+    questions_and_answers:
+      - question: |
+          What is impact of CVE-2024-38475 in RHEL9?
+        answer: |
+          CVE-2024-38475 is a flaw was found in the mod_rewrite module of httpd.This flaw requires mod_rewrite to be loaded and used, and it is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later.
+      - question: |
+          Which module in Apache httpd is affected by CVE-2024-38475?
+        answer: |
+          The mod_rewrite module of httpd is affected due to CVE-2024-38475, and it is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later.
+      - question: |
+          In which version of httpd CVE-2024-38475 fixed?
+        answer: |
+          The CVE-2024-38475 is fixed in httpd-2.4.57-11.el9_4 package version in Red Hat Enterprise Linux (RHEL) 9.4 and later.
+  - context: |
+      CVE-2024-24795 is a flaw found in httpd. An HTTP response splitting in httpd modules may allow an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.
+      Statement:This flaw only affects configurations when at least one of the following modules is loaded and being used: mod_authnz_fcgi, mod_cgi, mod_cgid, mod_proxy_fcgi, mod_proxy_scgi and mod_proxy_uwsgi. Additionally, this flaw is only exploitable by a malicious backend in a reverse proxy configuration or an attack against a backend application that inserts headers.These modules are enabled by default in Red Hat Enterprise Linux 9. These modules can be disabled via the configuration file if their functionality is not being used.Solution: The CVE-2024-39573 is fixed in httpd-2.4.62-1.el9 package version in Red Hat Enterprise Linux (RHEL) 9.5.If the system is not already updated to latest version of httpd then use `# dnf update httpd` command to update httpd package to the latest version.
+      For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2024:9306
+
+    questions_and_answers:
+      - question: |
+          CVE-2024-24795 is fixed in which rpm package in RHEL 9?
+        answer: |
+          In RHEL 9, CVE-2024-24795 has been fixed in httpd-2.4.62-1.el9, in package version in Red Hat Enterprise Linux (RHEL) 9.5.If the system is not already updated to latest version of httpd then use `# dnf update httpd` command to update httpd package to the latest version.
+      - question: |
+          Describle the flaw in CVE-2024-24795 briefly?
+        answer: |
+          CVE-2024-24795 is a flaw found in httpd. An HTTP response splitting in httpd modules may allow an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.This flaw only affects configurations when at least one of the following modules is loaded and being used: mod_authnz_fcgi, mod_cgi, mod_cgid,mod_proxy_fcgi, mod_proxy_scgi and mod_proxy_uwsgi. Additionally, this flaw is only exploitable by a malicious backend in a reverse proxy configuration or an attack against a backend application that inserts headers.
+      - question: |
+          How CVE-2024-24795 affects RHEL 9?
+        answer: |
+          CVE-2024-24795 is a flaw found in httpd. An HTTP response splitting in httpd modules may allow an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.This flaw only affects configurations when at least one of the following modules is loaded and being used: mod_authnz_fcgi, mod_cgi, mod_cgid,mod_proxy_fcgi, mod_proxy_scgi and mod_proxy_uwsgi.
+  - context: >
+      CVE-2022-37436 is a flaw was found in the mod_proxy module of httpd. A malicious backend can cause the response headers to be truncated because they are not cleaned when an error is found while reading them, resulting in some headers being incorporated into the response body and not being interpreted by a client.Statement:This flaw is only exploitable via bad headers generated by a malicious backend or a malicious application.The httpd as shipped in Red Hat Enterprise Linux 9 is vulnerable to this flaw.Solution:CVE-2022-37436 is fixed in httpd-2.4.53-7.el9_1.1.package version in Red Hat Enterprise Linux (RHEL) 9.1 and later.If the system is not already updated to latest version of httpd then use `# dnf update httpd` command to update httpd package to the latest version.For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2023:0970
+    questions_and_answers:
+      - question: |
+          What is CVE-2022-37436 ?
+        answer: |
+          Vulnerability reported for httpd package in RHEL. A flaw was found a flaw was found in the mod_proxy module of httpd.A malicious backend can cause the response headers to be truncated because they are not cleaned when an error is found while reading them, resulting in some headers being incorporated into the response body and not being interpreted by a client. It is fixed in httpd-2.4.53-7.el9_1.1.package version in Red Hat Enterprise Linux (RHEL) 9.1 and later
+      - question: |
+          What is impact of CVE-2022-37436 on RHEL 9 system ?
+        answer: |
+          It was a flaw found in the mod_proxy module of httpd.A malicious backend can cause the response headers to be truncated because they are not cleaned when an error is found while reading them, resulting in some headers being incorporated into the response body and not being interpreted by a client. It is fixed in httpd-2.4.53-7.el9_1.1.package version in Red Hat Enterprise Linux (RHEL) 9.1 and later
+      - question: |
+          What are mitigation steps for CVE-2022-37436 ?
+        answer: |
+          It is fixed in httpd-2.4.53-7.el9_1.1.package version in Red Hat Enterprise Linux (RHEL) 9.1 and later.If the system is not already updated to latest version of httpd then use `# dnf update httpd` command to update httpd package to the latest version.For more details refer Red Hat Security Advisory https://access.redhat.com/errata/RHSA-2023:0970
+document_outline: |
+  vulnerability and Common Vulnerabilities and Exposures (CVE) information about httpd package in Red Hat Enterprise Linux 9.
+document:
+  repo: https://github.com/dmasirkar/rhel-ai-demo-for-rh-week
+  commit: 446f6c827e3dabe10b94e9cb8bb8c82181ca6bb9
+  patterns:
+    - httpd-rhel-ai.md
