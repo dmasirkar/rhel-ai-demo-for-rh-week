@@ -9,6 +9,7 @@ import time
 import json
 import os 
 
+# Here change http://127.0.0.1:8000 with actual model end point
 model_service = os.getenv("MODEL_ENDPOINT",
                           "http://127.0.0.1:8000")
 model_service = f"{model_service}/v1"
@@ -79,7 +80,7 @@ def memory():
     memory = ConversationBufferWindowMemory(return_messages=True,k=3)
     return memory
 
-model_name = os.getenv("MODEL_NAME", "") 
+model_name = os.getenv("MODEL_NAME", "/var/home/instruct/.cache/instructlab/models/granite-8b-lab-v1") 
 
 if server == "Ollama":
     models = get_models()
